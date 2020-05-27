@@ -14,7 +14,8 @@ class Book:
         }
 
     def __str__(self):
-        formatted_string = "{0} BOOK\n\tlast update\t: {1}\n\tcreation date\t: {2}\n\tstarter recipes\t:\n\n"
+        formatted_string = "{0} BOOK\n\tlast update\t: {1}\n\tcreation date\t"\
+                           ": {2}\n\tstarter recipes\t:\n\n"
         for i in range(0, len(self.recopies_list["starter"])):
             formatted_string += "\t\t{3[" + str(i) + "]}\n"
         formatted_string = formatted_string[:len(formatted_string) - 1]
@@ -25,8 +26,10 @@ class Book:
         formatted_string += "\n\tdessert recipes\t:\n\n"
         for i in range(0, len(self.recopies_list["dessert"])):
             formatted_string += "\t\t{5[" + str(i) + "]}\n"
-        return formatted_string.format(self.name.upper(), self.last_update, self.creation_date,
-                                       self.recopies_list["starter"], self.recopies_list["lunch"],
+        return formatted_string.format(self.name.upper(), self.last_update,
+                                       self.creation_date,
+                                       self.recopies_list["starter"],
+                                       self.recopies_list["lunch"],
                                        self.recopies_list["lunch"])
 
     def get_recipe_by_name(self, name):
